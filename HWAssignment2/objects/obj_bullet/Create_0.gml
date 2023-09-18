@@ -1,4 +1,5 @@
 /// @description Insert description here
 // You can write your code in this editor
-
-_speed = 10;
+damage = obj_player_controller.damage;
+_speed = obj_player_controller.x_speed+5;
+alarm[0] = 120;

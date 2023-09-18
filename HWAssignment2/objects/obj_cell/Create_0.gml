@@ -4,10 +4,14 @@
 controller = instance_find(obj_player_controller,0);
 attack_cooldown = 60;
 attack_cooldown_remaining = 0;
+image_angle =controller.image_angle;
+x = controller.x + x_offset;
+y = controller.y + y_offset;
+
 
 function spawn_next(_cell_type){
 	var _next_spawn = find_next_available_spawn(-32,0,0,1);
-	_new_cell = instance_create_layer(x,y, "Instances", _cell_type);
+	_new_cell = instance_create_layer(x +_next_spawn[0],y+_next_spawn[1], "Instances", _cell_type);
 	_new_cell.x_offset = _next_spawn[0];
 	_new_cell.y_offset = _next_spawn[1];
 }

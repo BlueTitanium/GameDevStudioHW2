@@ -9,4 +9,5 @@ if(obj_player_controller.is_dead == false and obj_player_controller.paused == fa
 }
 if(_health <= 0){
 	instance_destroy();	
+	instance_destroy(_indicator);
 }
