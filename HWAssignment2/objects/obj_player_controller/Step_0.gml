@@ -47,16 +47,16 @@ if(not is_dead){
 			evo_points-=obj_buy_cell_piercing.purchase_amt;
 		}	
 		if(keyboard_check_pressed(ord("3"))
+		and evo_points >= obj_buy_cell_shield.purchase_amt 
+		and instance_number(obj_cell)<max_cells){
+			spawn_next_controller(obj_cell_shield);	
+			evo_points-=obj_buy_cell_shield.purchase_amt;
+		}	
+		if(keyboard_check_pressed(ord("4"))
 		and evo_points >= obj_buy_cell_homing.purchase_amt 
 		and instance_number(obj_cell)<max_cells){
 			spawn_next_controller(obj_cell_homing);	
 			evo_points-=obj_buy_cell_homing.purchase_amt;
-		}	
-		if(keyboard_check_pressed(ord("4"))
-		and evo_points >= obj_buy_cell_fast.purchase_amt 
-		and instance_number(obj_cell)<max_cells){
-			spawn_next_controller(obj_cell_fast);	
-			evo_points-=obj_buy_cell_fast.purchase_amt;
 		}	
 		if(keyboard_check_pressed(ord("5"))
 		and evo_points >= obj_buy_cell_fast.purchase_amt 
@@ -71,7 +71,7 @@ if(not is_dead){
 		
 	}
 } else {
-	room_goto(rm_end);
+	//room_goto(rm_end);
 }
 
 if(keyboard_check_pressed(vk_escape))

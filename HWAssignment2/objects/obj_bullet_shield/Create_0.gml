@@ -7,5 +7,4 @@
 
 // Inherit the parent event
 event_inherited();
-_points=20;
-alarm[0] = 60;
+_speed = obj_player_controller.x_speed;

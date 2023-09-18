@@ -6,8 +6,7 @@ y += lengthdir_y(_speed,image_angle);
 var _inst = instance_place(x, y, obj_enemy);
 if(_inst != noone){
 	if(is_colliding=false){
-		_inst._health -= damage;
-		obj_player_controller.evo_points += _inst._points;
+		_inst._health -= damage*2.5;
 		is_colliding = true;
 	}
 } else {
