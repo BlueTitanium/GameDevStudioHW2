@@ -4,7 +4,17 @@
 var cam = view_camera[ 0];
 
 camera_set_view_pos( cam, x - camera_get_view_width( cam) / 2, y - camera_get_view_height( cam) / 2);
+if(damage_timer>0){
+	
+	damage_timer -= 1;
+	
+	screen_shake_params.g_Magnitude = 5;
+	fx_set_parameters(screen_shake,screen_shake_params);
+} else { 
+	screen_shake_params.g_Magnitude = 0;
+	fx_set_parameters(screen_shake,screen_shake_params);
 
+}
 
 if(not is_dead){
 	if(not paused){
@@ -71,7 +81,14 @@ if(not is_dead){
 		
 	}
 } else {
-	//room_goto(rm_end);
+	if(damage_timer>0 and death_timer == 0){
+		death_timer = death_length;
+	}
+	if(death_timer>=0){
+		death_timer-=1;	
+	} else {
+		room_goto(rm_end);
+	}
 }
 
 if(keyboard_check_pressed(vk_escape))

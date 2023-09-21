@@ -26,15 +26,17 @@ if(controller.is_dead == false and controller.paused == false){
 		_inst._health -= 10;
 		controller.evo_points += _inst._points;
 		if(is_core){
+			controller.take_damage();
 			//lose event
 			controller.is_dead = true;
 			controller.core=noone;
-			room_goto(rm_end);
+			
 			with(obj_cell){
 				instance_destroy();
 			}
 		} else {
 			instance_destroy();
+			
 		}
 	}
 	var _inst_b = instance_place(x, y, obj_bullet_enemy);

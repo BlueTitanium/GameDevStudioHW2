@@ -13,3 +13,4 @@ draw_set_color(c_white);
 var attack_speed = 1/(attack_cooldown/60);
 draw_text(1600-20,20,"Attack Speed: " + string(attack_speed));
 draw_text(1600-20,44,"Damage: " + string(damage));
+
