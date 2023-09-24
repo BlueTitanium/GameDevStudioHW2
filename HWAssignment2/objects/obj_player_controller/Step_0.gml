@@ -87,6 +87,7 @@ if(not is_dead){
 	if(death_timer>=0){
 		death_timer-=1;	
 	} else {
+		global.e_p = evo_points;
 		room_goto(rm_end);
 		audio_stop_all();
 		audio_play_sound(Ludum_Dare_38___Track_5,1,true);

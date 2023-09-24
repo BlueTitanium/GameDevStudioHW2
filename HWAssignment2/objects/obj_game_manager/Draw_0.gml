@@ -15,6 +15,7 @@ if(room == rm_start){
 if(room == rm_end){
 	draw_text(room_width/2,room_height/2,"You Reached Wave " + string(global.count));
 	draw_set_font(fnt_raleway28);
+	draw_text(room_width/2,room_height/2+50,"with " + string(global.e_p) + " evolution points remaining...");
 	draw_text(room_width/2,room_height-50,"Press space to go to start screen");
 }
 
