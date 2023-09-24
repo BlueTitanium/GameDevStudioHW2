@@ -49,32 +49,31 @@ if(not is_dead){
 		and instance_number(obj_cell)<max_cells){
 			spawn_next_controller(obj_cell_fast);
 			evo_points-=obj_buy_cell_fast.purchase_amt;
+			audio_play_sound(forceField_001,1,false,.2);
 		}	
 		if(keyboard_check_pressed(ord("2"))
 		and evo_points >= obj_buy_cell_piercing.purchase_amt 
 		and instance_number(obj_cell)<max_cells){
 			spawn_next_controller(obj_cell_piercing);
 			evo_points-=obj_buy_cell_piercing.purchase_amt;
+			audio_play_sound(forceField_002,1,false,.2);
 		}	
 		if(keyboard_check_pressed(ord("3"))
 		and evo_points >= obj_buy_cell_shield.purchase_amt 
 		and instance_number(obj_cell)<max_cells){
 			spawn_next_controller(obj_cell_shield);	
 			evo_points-=obj_buy_cell_shield.purchase_amt;
+			audio_play_sound(forceField_003,1,false,.2);
 		}	
 		if(keyboard_check_pressed(ord("4"))
 		and evo_points >= obj_buy_cell_homing.purchase_amt 
 		and instance_number(obj_cell)<max_cells){
 			spawn_next_controller(obj_cell_homing);	
 			evo_points-=obj_buy_cell_homing.purchase_amt;
-		}	
-		if(keyboard_check_pressed(ord("5"))
-		and evo_points >= obj_buy_cell_fast.purchase_amt 
-		and instance_number(obj_cell)<max_cells){
-			spawn_next_controller(obj_cell_fast);	
-			evo_points-=obj_buy_cell_fast.purchase_amt;
+			audio_play_sound(forceField_004,1,false,.2);
 		}	
 		if(keyboard_check_pressed(vk_tab)){
+			audio_play_sound(forceField_000,1,false,.5);
 			compress();
 		}	
 	} else {
@@ -82,12 +81,17 @@ if(not is_dead){
 	}
 } else {
 	if(damage_timer>0 and death_timer == 0){
+		audio_sound_gain(Ludum_Dare_38___Track_4,0,1000);
 		death_timer = death_length;
 	}
 	if(death_timer>=0){
 		death_timer-=1;	
 	} else {
 		room_goto(rm_end);
+		audio_stop_all();
+		audio_play_sound(Ludum_Dare_38___Track_5,1,true);
+		audio_sound_gain(Ludum_Dare_38___Track_5,0,0);
+		audio_sound_gain(Ludum_Dare_38___Track_5,.1,1000);
 	}
 }
 

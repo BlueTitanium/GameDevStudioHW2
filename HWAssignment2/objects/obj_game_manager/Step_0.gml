@@ -6,15 +6,16 @@ if (keyboard_check_pressed(vk_space)){
 	
 	if (room == rm_start){
 		room_goto(rm_game);	
+		audio_stop_all();	
+		audio_play_sound(Ludum_Dare_38___Track_4,1,true);
+		audio_sound_gain(Ludum_Dare_38___Track_4,0,0);
+		audio_sound_gain(Ludum_Dare_38___Track_4,.1,1000);
 	} else if (room == rm_end){
 		room_goto(rm_start);
 		//global.p_score = 0;
 	}
 	//room_goto_next();
 }
-
-
-
 
 
 

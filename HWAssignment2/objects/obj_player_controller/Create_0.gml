@@ -41,16 +41,18 @@ function spawn_next_controller(_cell_type){
 }
 
 function compress(){
+	var _desired_attack_speed = 1/(attack_cooldown/60);
 	with(obj_cell){
 		if(not is_core){
 			instance_destroy();
 			//controller.x_speed +=.1;
 			//controller.y_speed +=.1;
 			controller.damage+=.1;
-			controller.attack_cooldown = clamp(controller.attack_cooldown-.05,0.1,1000);
+			_desired_attack_speed=clamp(_desired_attack_speed+0.05,0.1,5);
 			
 		}
 	}
+	attack_cooldown = clamp(60/_desired_attack_speed,0.1,1000);
 }
 
 function take_damage(){

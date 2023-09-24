@@ -21,6 +21,9 @@ function try_shoot(){
 		attack_cooldown_remaining = attack_cooldown;
 		_bullet = instance_create_layer(x,y, "Instances", obj_bullet);
 		_bullet.image_angle = image_angle;
+		if(!audio_is_playing(laserLarge_000))
+			audio_play_sound(laserLarge_000,1,false,.2);
+		
 	}
 }
 

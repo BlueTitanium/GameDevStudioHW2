@@ -9,6 +9,8 @@ if(_inst != noone){
 	if(is_colliding=false){
 		_inst._health -= damage*2.5;
 		is_colliding = true;
+		audio_play_sound(impactMetal_001,1,false,.4);
+		obj_particle_manager.emit_spark(obj_particle_manager._ptype3,x,y);
 	}
 } else {
 	is_colliding=false;	

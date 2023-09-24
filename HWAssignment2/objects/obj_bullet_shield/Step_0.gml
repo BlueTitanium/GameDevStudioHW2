@@ -12,6 +12,8 @@ y += lengthdir_y(_speed,image_angle);
 var _inst_b = instance_place(x, y, obj_bullet_enemy);
 	if(_inst_b != noone){
 		instance_destroy(_inst_b);
+		audio_play_sound(impactMetal_004,1,false,.4);
+		obj_particle_manager.emit_spark(obj_particle_manager._ptype4,x,y);
 	}
 	
 if(not obj_player_controller.paused){

@@ -3,7 +3,7 @@
 
 spawn_delay_decrease = 0.1;
 spawn_delay = 180;
-count = 1;
+global.count = 1;
 amt_to_spawn = 1;
 instance_create_layer(random_range(0, room_width), -32,"Instances",obj_enemy);
 //alarm[0] = spawn_delay;
@@ -13,7 +13,7 @@ function spawn_enemy(){
 	for(var i = 0; i<amt_to_spawn;i++){
 		_random_side = floor(random_range(0,4));
 		var _random_enemy = floor(random_range(0,array_length(enemies)));
-		if(count==1){
+		if(global.count==1){
 			_random_enemy=0;
 		}
 		switch(_random_side){
@@ -41,8 +41,8 @@ function spawn_enemy(){
 				break;
 		}
 	}
-	count+=1;
-	if(count%2 == 0 and amt_to_spawn < 64){
+	global.count+=1;
+	if(global.count%2 == 0 and amt_to_spawn < 64){
 		amt_to_spawn *=2;
 	}
 }

@@ -13,5 +13,7 @@ function try_shoot(){
 		attack_cooldown_remaining = controller.core.attack_cooldown;
 		_bullet = instance_create_layer(x,y, "Instances", obj_bullet_piercing);
 		_bullet.image_angle = image_angle;
+		if(!audio_is_playing(laserLarge_003))
+			audio_play_sound(laserLarge_003,1,false,.2);
 	}
 }

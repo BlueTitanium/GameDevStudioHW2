@@ -9,7 +9,7 @@ if(not obj_player_controller.is_dead){
 	draw_rectangle(0,0,room_width,room_height,false);
 }else {
 	draw_set_alpha(1-(obj_player_controller.death_timer
-	/obj_player_controller.death_length));
+	/(obj_player_controller.death_length)));
 	draw_set_color(#A03800);
 	draw_rectangle(0,0,room_width,room_height,false);
 }

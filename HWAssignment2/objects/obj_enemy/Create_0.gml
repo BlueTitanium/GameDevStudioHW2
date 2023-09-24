@@ -1,9 +1,9 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-_speed = 4;
+_speed = 3;
 
-_health = obj_enemy_spawner.count;
+_health = global.count;
 
 _points = 10;
 

@@ -8,6 +8,8 @@ x = controller.x + x_offset;
 y = controller.y + y_offset;
 attack_cooldown = controller.attack_cooldown;
 if(controller.is_dead == false and controller.paused == false){
+	
+	
 	image_angle =controller.image_angle;
 	//x = controller.x + x_offset;
 	//y = controller.y + y_offset;
@@ -30,7 +32,7 @@ if(controller.is_dead == false and controller.paused == false){
 			//lose event
 			controller.is_dead = true;
 			controller.core=noone;
-			
+			audio_play_sound(explosionCrunch_001,1,false,.5);
 			with(obj_cell){
 				instance_destroy();
 			}
@@ -46,7 +48,7 @@ if(controller.is_dead == false and controller.paused == false){
 			//lose event
 			controller.is_dead = true;
 			controller.core=noone;
-			room_goto(rm_end);
+			audio_play_sound(explosionCrunch_001,1,false,.5);
 			with(obj_cell){
 				instance_destroy();
 			}
